@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--依赖注入：给属性赋值
+        1、xml标签和属性
+        2、使用注解
+
+        di的分类：
+        1）设值注入，就是Spring的调用类的set方法
+        2）构造注入，Spring调用类的构造方法完成属性赋值
+
+        简单类型：string中把string和Java中的基本数据类型都叫做简单类型
+        1、设值注入，就是Spring的调用类的set方法，完成属性赋值
+            简单类型的设值注入：<property name="属性名" value="简单类型属性值" />
+            <bean id ="xx" class = "xxx">
+                <property name="属性名" value="简单类型属性值" />
+                ...
+                ...
+            </bean>
+
+    -->
+
+    <bean id="myStudent" class="com.ymm.ba01.Student">
+        <property name="name" value="里斯"/>
+        <property name="age" value="28"/>
+    </bean>
+    
+
+    <!--
+    引用类型的设值注入，使用ref来赋值
+    ref有两种使用方法：
+    1.ref作为属性
+            <bean id ="xx" class = "xxx">
+                <property name="属性名" ref="bean的id" />
+                ...
+                ...
+            </bean>
+    2.ref作为子标签
+                <bean id ="xx" class = "xxx">
+                <property name="属性名">
+                    <ref bean = "bean的id">
+                </property>
+
+                ...
+                ...
+            </bean>
+
+    -->
+
+</beans>
