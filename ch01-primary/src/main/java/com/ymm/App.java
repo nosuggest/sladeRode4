@@ -20,6 +20,8 @@ public class App {
         ApplicationContext ctx = new ClassPathXmlApplicationContext(config);
 
 //        从容器中获取对象，使用getBean(<bean>中的id)
+//        Spring默认调用无参构造构造方法，如果没有，会报错
+//        singleton：默认作用区域是单例的，prototype：原型作用区域，每次创建都是一个新的，还有request、session
         SomeService service = (SomeService) ctx.getBean("someService");
 
 //        调用业务方法
@@ -32,10 +34,9 @@ public class App {
         System.out.println("对象个数" + numbers);
 //        获取对象名称
         String[] names = ctx.getBeanDefinitionNames();
-        for (String name:names) {
+        for (String name : names) {
             System.out.println(name);
         }
-
     }
 }
 

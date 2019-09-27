@@ -11,8 +11,22 @@
     <!--等价于
     SomeServiceImpl someService= new com.ymm.service.SomeServiceImpl()
     对象someService放入Spring容器中(Map<id,对象>)
-
     -->
+
+
+    <bean id="someService1" class="com.ymm.service.SomeServiceImpl" scope="singleton"/>
+    <bean id="someService2" class="com.ymm.service.SomeServiceImpl" scope="prototype"/>
+    <!--bean对象的作用域：
+        1、单例
+        <bean id ="" class = "" scope="singleton"/>
+            1.1 创建容器的时候创建对象
+            1.2 优点速度快
+        2、原型
+        <bean id ="" class = "" scope="prototype"/>
+            1.1 getBean的时候创建对象
+            1.2 速度慢
+    -->
+
 </beans>
         <!--
         xsd:约束文件，文件的url地址是唯一的：http://www.springframework.org/schema/beans/spring-beans.xsd

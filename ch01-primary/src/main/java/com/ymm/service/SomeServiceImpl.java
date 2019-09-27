@@ -5,7 +5,7 @@ package com.ymm.service;
  */
 public class SomeServiceImpl implements SomeService {
     public SomeServiceImpl() {
-        System.out.println("无参构造");
+//        System.out.println("无参构造");
     }
 
     @Override

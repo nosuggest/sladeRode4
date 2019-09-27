@@ -31,4 +31,24 @@ public class AppTest {
         service.doSome();
     }
 
+    @Test
+    public void test02() {
+        String config = "applicationContext.xml";
+        ApplicationContext ctx = new ClassPathXmlApplicationContext(config);
+        SomeService service1 = (SomeService) ctx.getBean("someService1");
+        SomeService service2 = (SomeService) ctx.getBean("someService1");
+        if (service1.equals(service2)){
+            System.out.println("单例模式");
+        }
+        SomeService service3 = (SomeService) ctx.getBean("someService2");
+        if (service1.equals(service3)){
+            System.out.println("单例模式");
+        }else {
+            System.out.println("原型模式");
+        }
+
+    }
+
+
 }
+
