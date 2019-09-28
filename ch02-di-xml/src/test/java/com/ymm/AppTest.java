@@ -2,7 +2,7 @@ package com.ymm;
 
 import static org.junit.Assert.assertTrue;
 
-import com.ymm.ba04.Student;
+import com.ymm.ba06.Student;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -49,6 +49,22 @@ public class AppTest {
     @Test
     public void test04() {
         String config = "ba04/applicationContext.xml";
+        ApplicationContext ctx = new ClassPathXmlApplicationContext(config);
+        Student file = (Student) ctx.getBean("myStudent");
+        System.out.println(file);
+    }
+
+    @Test
+    public void test05() {
+        String config = "ba05/applicationContext.xml";
+        ApplicationContext ctx = new ClassPathXmlApplicationContext(config);
+        Student file = (Student) ctx.getBean("myStudent");
+        System.out.println(file);
+    }
+
+    @Test
+    public void test06() {
+        String config = "ba06/total.xml";
         ApplicationContext ctx = new ClassPathXmlApplicationContext(config);
         Student file = (Student) ctx.getBean("myStudent");
         System.out.println(file);

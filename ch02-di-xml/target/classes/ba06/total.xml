@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+    <!--总的配置文件，主要作用是包含其他的多个配置文件，总的文件中一般不定义对象的
+       使用<import resource="配置文件">包含其他的配置文件。
+
+       关键字 "classpath:"，表示类路径，告诉Spring到类路径中寻找配置文件
+    -->
+
+    <!--配置你其他的配置文件-->
+    <!--<import resource="classpath:ba06/spring-school.xml"/>-->
+    <!--<import resource="classpath:ba06/spring-student.xml"/>-->
+
+    <!--通配符-->
+    <import resource="classpath:ba06/spring-*.xml"/>
+</beans>
