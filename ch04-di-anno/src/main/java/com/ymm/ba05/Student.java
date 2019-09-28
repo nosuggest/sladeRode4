@@ -21,7 +21,8 @@ public class Student {
     *
     * */
 //    默认是byName，失败的情况下会使用byType
-    @Resource
+//    如果只想使用byName，指定bean的id(名称)
+    @Resource(name = "myFirstSchool")
     private School school;
 
     public School getSchool() {
